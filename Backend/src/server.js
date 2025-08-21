@@ -60,6 +60,50 @@ app.post('/login', (req, res) => {
   });
 });
 
+//editar o usuario
+app.put('/usuarios/:id', (req, res) => {
+  const { id } = req.params;
+  const { name, surname, email, password, tempo } = req.body;
+
+  const query = `
+    UPDATE usuarios
+    SET nome = ?, sobrenome = ?, email = ?, senha = ?, tempo_condicao = ?
+    WHERE id = ?
+  `;
+
+  connection.query(query, [name, surname, email, password, tempo, id], (err, results) => {
+    if (err) {
+      return res.status(500).json({ success: false, message: 'Erro ao atualizar usuário.', err });
+    }
+
+    if (results.affectedRows === 0) {
+      return res.status(404).json({ success: false, message: 'Usuário não encontrado.' });
+    }
+
+    res.json({ success: true, message: 'Usuário atualizado com sucesso.' });
+  });
+});
+
+//deletar o usuario
+app.delete('/usuarios/:id', (req, res) => {
+  const { id } = req.params;
+
+  const query = 'DELETE FROM usuarios WHERE id = ?';
+
+  connection.query(query, [id], (err, results) => {
+    if (err) {
+      return res.status(500).json({ success: false, message: 'Erro ao deletar usuário.', err });
+    }
+
+    if (results.affectedRows === 0) {
+      return res.status(404).json({ success: false, message: 'Usuário não encontrado.' });
+    }
+
+    res.json({ success: true, message: 'Usuário deletado com sucesso.' });
+  });
+});
+
+
 //unificar o endpoint do cadastro baseado na tabela de usuarios (nome, senha), criar o endpoint com a query INSERT INTO
 //endpoint do login no formato app.post com SELECT para logar e salvar o usuario no app
 //endpoint do cadastro do diário salvando com INSERT INTO id do user e sintomas
