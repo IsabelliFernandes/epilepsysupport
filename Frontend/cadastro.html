@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro - Epilepsy Support</title>
+  <link rel="stylesheet" href="cadastro.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Epilepsy<br>Support</h1>
+    </div>
+
+    <form class="form-box">
+      <label class="input-box">
+        <span>Seu nome:</span>
+        <input type="text" id="name" required />
+      </label>
+
+      <label class="input-box">
+        <span>Seu sobrenome:</span>
+        <input type="text" id="surname" required />
+      </label>
+
+      <label class="input-box">
+        <span>Seu Email:</span>
+        <input type="email" id="email" required />
+      </label>
+
+      <label class="input-box">
+        <span>Senha:</span>
+        <input type="password" id="password" required />
+      </label>
+
+      <label class="input-box">
+        <span>Tempo que convive com a condição?</span>
+        <input type="text" id="tempo_condicao" required />
+      </label>
+
+      <button type="submit" class="submit-btn" onclick="cadastrar(event)">Cadastrar</button>
+    </form>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>

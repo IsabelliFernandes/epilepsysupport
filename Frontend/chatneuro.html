@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat - Epilepsy Support</title>
+  <link rel="stylesheet" href="chatneuro.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="menu-btn" aria-label="Abrir menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="sidebar-nav">
+        <button class="nav-item">📖</button>
+        <button class="nav-item active">💬</button>
+        <button class="nav-item">📊</button>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="page-header">
+        <h1 class="brand">Epilepsy<br>Support</h1>
+        <span class="brand-icon">💬</span>
+      </header>
+      <div class="chat-wrapper">
+        <div class="neurologist-info">Neurologista: Bianca de Oliveira.</div>
+        <div class="chat-bubble doctor">
+          Olá Isabelli. Precisamos marcar a próxima consulta para falar sobre seus exames.
+        </div>
+        <div class="chat-bubble user" id="userMessage"></div>
+      </div>
+      <footer class="chat-input-wrapper">
+        <input type="text" class="chat-input" placeholder="Mensagem..." id="messageInput">
+      </footer>
+    </main>
+  </div>
+  <script src="script5.js"></script>
+</body>
+</html>
