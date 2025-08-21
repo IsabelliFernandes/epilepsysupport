@@ -1,20 +1,15 @@
 create database epilepsy_support;
 use epilepsy_support;
 
-CREATE TABLE usuarios_login (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    senha VARCHAR(255) NOT NULL
-);
-CREATE TABLE usuarios_cadastro (
+CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     sobrenome VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
-    tempo_condicao VARCHAR(100) NOT NULL,
-    FOREIGN KEY (email) REFERENCES usuarios_login(email) ON DELETE CASCADE
+    tempo_condicao VARCHAR(100) NOT NULL
 );
+
 CREATE TABLE conversas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_email VARCHAR(255) NOT NULL,
