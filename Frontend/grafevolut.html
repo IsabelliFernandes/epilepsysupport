@@ -5,15 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Epilepsy Support - Evolução</title>
   <link rel="stylesheet" href="grafevolut.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div class="sidebar">
-    <div class="menu-icon">≡</div>
-    <div class="menu-separator"></div>
-      <div class="icon book">📖</div>
-      <div class="icon chat">💬</div>
-      <div class="icon chart selected">📊</div>
-  </div>
+    <aside class="sidebar">
+      <button class="menu-btn" aria-label="Abrir menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="sidebar-nav">
+        <button class="nav-item" aria-label="Diário" onclick="btn_diario()">📖</button>
+        <button class="nav-item" aria-label="Chat" onclick="btn_chat()">💬</button>
+        <button class="nav-item active" aria-label="Estatísticas">📊</button>
+      </nav>
+    </aside>
   <div class="main-content">
     <header>
       <h1>Epilepsy <span>Support</span></h1>

@@ -17,8 +17,8 @@
 
       <nav class="sidebar-nav">
         <button class="nav-item active" aria-label="Diário">📖</button>
-        <button class="nav-item" aria-label="Chat">💬</button>
-        <button class="nav-item" aria-label="Estatísticas">📊</button>
+        <button class="nav-item" aria-label="Chat" onclick="btn_chat()">💬</button>
+        <button class="nav-item" aria-label="Estatísticas" onclick="btn_graf()">📊</button>
       </nav>
     </aside>
 
@@ -37,8 +37,8 @@
 
       <section class="symptoms-card">
         <div class="symptom-row">
-          <span>tremores nas mãos</span>
-          <span>tontura</span>
+          <span>Tremores nas mãos</span>
+          <span>Tontura</span>
           <span>Olhos desnorteados</span>
         </div>
         <div class="symptom-row">
@@ -47,14 +47,15 @@
           <span>Fadiga</span>
         </div>
         <div class="symptom-row">
-          <span>confusão mental</span>
-          <span>medo</span>
-          <span>sonolência</span>
+          <span>Confusão mental</span>
+          <span>Medo</span>
+          <span>Sonolência</span>
         </div>
       </section>
+
+      <button id="btn_enviar"> Enviar </button>
     </main>
   </div>
   <script src="script4.js"></script>
 </body>
 </html>
-

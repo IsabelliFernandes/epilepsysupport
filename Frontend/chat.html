@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat - Epilepsy Support</title>
-  <link rel="stylesheet" href="chatneuro.css">
+  <link rel="stylesheet" href="chat.css">
 </head>
 <body>
   <div class="container">
@@ -14,10 +14,11 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
+
       <nav class="sidebar-nav">
-        <button class="nav-item">📖</button>
-        <button class="nav-item active">💬</button>
-        <button class="nav-item">📊</button>
+        <button class="nav-item" aria-label="Diário" onclick="btn_diario()">📖</button>
+        <button class="nav-item active" aria-label="Chat">💬</button>
+        <button class="nav-item" aria-label="Estatísticas" onclick="btn_graf()">📊</button>
       </nav>
     </aside>
     <main class="main">
@@ -28,9 +29,10 @@
       <div class="chat-wrapper">
         <div class="neurologist-info">Neurologista: Bianca de Oliveira.</div>
         <div class="chat-bubble doctor">
-          Olá Isabelli. Precisamos marcar a próxima consulta para falar sobre seus exames.
+          Olá <p id="p_nome_usuario"></p>, precisamos marcar a próxima consulta para falar sobre seus exames.
         </div>
-        <div class="chat-bubble user" id="userMessage"></div>
+        <div class="container-msg">
+        </div>
       </div>
       <footer class="chat-input-wrapper">
         <input type="text" class="chat-input" placeholder="Mensagem..." id="messageInput">

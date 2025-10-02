@@ -7,36 +7,77 @@ body {
     overflow: hidden;
   }
   
+  /* --------- Paleta & Variáveis ---------------------------------------- */
+:root {
+    --sidebar-bg: #e5a5a5;
+    --sidebar-width: 80px;
+    --gradient-top: #fceee9;
+    --gradient-bottom: #e8a894;
+    --title: #b57463;
+    --bubble-bg: #f4d1c7;
+    --card-grad-top: #fffffffa;
+    --card-grad-bottom: #f1c4b6;
+    --text-dark: #2d1f1f;
+  }
+  
+  /* --------- Reset ------------------------------------------------------ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; font-family: "Segoe UI", Arial, sans-serif; }
+  
+  /* --------- Plano de fundo geral -------------------------------------- */
+  body {
+    background: linear-gradient(to bottom, var(--gradient-top), var(--gradient-bottom));
+  }
+  
+  /* --------- Container e layout ---------------------------------------- */
+  .container { display: flex; height: 100%; }
+  
+  /* ▸ Barra lateral */
   .sidebar {
-    width: 100px;
-    background-color: #e3a8a4;
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-top: clamp(16px, 4vh, 32px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
+    gap: 32px;
   }
   
-  .menu-icon {
-    font-size: 30px;
-    margin-bottom: 10px;
+  /* Botão hambúrguer */
+  .menu-btn {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
   }
-  
-  .menu-separator {
-    width: 40%;
+  .bar {
+    width: 30px;
     height: 4px;
-    background-color: #fff;
-    margin-bottom: 20px;
+    background: #1e1e1e;
+    border-radius: 3px;
   }
   
-  .icon {
-    width: 40px;
-    height: 40px;
-    margin: 15px 0;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+  /* Ícones de navegação */
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
   }
-  
+  .nav-item {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #1e1e1e;
+    transition: transform .2s;
+  }
+  .nav-item:hover { transform: scale(1.1); }
+  .nav-item.active { border-left: 4px solid #fff; padding-left: 4px; }
   
   .main-content {
     flex-grow: 1;

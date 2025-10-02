@@ -13,7 +13,11 @@ async function login(e) {
       const result = await response.json();
 
       if (result.success) {
+        sessionStorage.setItem("nome_usuario", result.usuario.nome_usuario);
+        sessionStorage.setItem("id_usuario", result.usuario.id_usuario);
+
         alert("Login bem-sucedido!");
+        
         window.location.href = "pgprincipal.html";
       } else {
         alert("Usuário ou senha incorretos!");

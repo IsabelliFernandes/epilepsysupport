@@ -1,44 +1,74 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #fceee9, #e8a894);
+  /* --------- Paleta & Variáveis ---------------------------------------- */
+:root {
+    --sidebar-bg: #e5a5a5;
+    --sidebar-width: 80px;
+    --gradient-top: #fceee9;
+    --gradient-bottom: #e8a894;
+    --title: #b57463;
+    --bubble-bg: #f4d1c7;
+    --card-grad-top: #fffffffa;
+    --card-grad-bottom: #f1c4b6;
+    --text-dark: #2d1f1f;
   }
   
-  .container {
-    display: flex;
-    height: 100vh;
+  /* --------- Reset ------------------------------------------------------ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { display: flex; height: 100%; font-family: "Segoe UI", Arial, sans-serif; }
+  
+  /* --------- Plano de fundo geral -------------------------------------- */
+  body {
+    background: linear-gradient(to bottom, var(--gradient-top), var(--gradient-bottom));
   }
   
+  /* ▸ Barra lateral */
   .sidebar {
-    background-color: #e5a5a5;
-    width: 80px;
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-top: clamp(16px, 4vh, 32px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    gap: 32px;
   }
-  
-  .menu-icon {
-    margin-bottom: 20px;
+
+  /* Botão hambúrguer */
+  .menu-btn {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     cursor: pointer;
   }
-  
-  .menu-icon .bar {
+  .bar {
     width: 30px;
     height: 4px;
-    background-color: #1e1e1e;
-    margin: 4px 0;
-    border-radius: 2px;
+    background: #1e1e1e;
+    border-radius: 3px;
   }
   
-  .nav-icons .icon {
-    font-size: 24px;
-    margin: 20px 0;
+  /* Ícones de navegação */
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  .nav-item {
+    background: none;
+    border: none;
+    font-size: 32px;
     cursor: pointer;
+    color: #1e1e1e;
+    transition: transform .2s;
   }
+  .nav-item:hover { transform: scale(1.1); }
+  .nav-item.active { border-left: 4px solid #fff; padding-left: 4px; }
   
+
+  /* ▸ Conteúdo principal */
   .main-content {
     flex-grow: 1;
     padding: 40px;
@@ -53,6 +83,9 @@ body {
   }
   
   .message-box {
+    display: flex;
+    align-items: center;
+    gap: .3vw;
     background-color: #f4d1c7;
     padding: 20px 30px;
     border-radius: 20px;

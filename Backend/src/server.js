@@ -1,37 +1,36 @@
 // function entrar() {
 //     alert("Você clicou em Entrar");
 //   }
-  
+
 //   function cadastrar() {
 //     alert("Você clicou em Cadastrar");
 //   }
-  
+
 //   function souEstudante() {
 //     alert("Você clicou em 'Sou um estudante'");
 //   }
-  
-  const express = require('express');
-  const cors = require('cors');
-  const connection = require('../src/db_config');
-  const app = express();
-  
-  app.use(cors());
-  app.use(express.json());
-  
-  const port = 3030;
 
+const express = require('express');
+const cors = require('cors');
+const connection = require('../src/db_config');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+const port = 3030;
 
 app.post('/cadastro', (req, res) => {
   const { name, surname, email, password, tempo } = req.body;
 
   const query = 'INSERT INTO usuarios (nome, sobrenome, email, senha, tempo_condicao) VALUES (?, ?, ?, ?, ?)';
-  connection.query(query, [ name, surname, email, password, tempo ], (err, results) => {
+  connection.query(query, [name, surname, email, password, tempo], (err, results) => {
     if (err) {
-      return res.status(500).json({ success: false, message: 'Erro no servidor.', err: err});
+      return res.status(500).json({ success: false, message: 'Erro no servidor.', err: err });
     }
 
     if (results.length > 0) {
-      res.json({ success: false, message: 'Cadastro falhou!'});
+      res.json({ success: false, message: 'Cadastro falhou!' });
       console.log(results);
     } else {
       res.json({ success: true, message: 'Cadastro bem-sucedido!' });
@@ -53,7 +52,7 @@ app.post('/login', (req, res) => {
     }
 
     if (results.length > 0) {
-      res.json({ success: true, message: 'Login bem-sucedido!' });
+      res.json({ success: true, message: 'Login bem-sucedido!', usuario: { id_usuario: results[0].id, nome_usuario: results[0].nome } });
     } else {
       res.json({ success: false, message: 'Usuário ou senha incorretos!' });
     }
@@ -103,6 +102,26 @@ app.delete('/usuarios/:id', (req, res) => {
   });
 });
 
+// Registrar sintomas
+app.post('/enviarSintomas', (req, res) => {
+  const { id_usuario, sintomasSelecionados } = req.body;
+
+  const sintomasArray = JSON.stringify(sintomasSelecionados);
+
+  const query = 'INSERT INTO historico_crises (id_usuario, sintomas) VALUES (?, ?);';
+
+  connection.query(query, [id_usuario, sintomasArray], (err, results) => {
+    if (err) {
+      return res.status(500).json({ success: false, message: 'Erro no servidor.' });
+    }
+
+    if (results.affectedRows > 0) {
+      res.json({ success: true, message: 'Sintomas registrados!' });
+    } else {
+      res.json({ success: false, message: 'Erro ao enviar sintomas!' });
+    }
+  });
+});
 
 //unificar o endpoint do cadastro baseado na tabela de usuarios (nome, senha), criar o endpoint com a query INSERT INTO
 //endpoint do login no formato app.post com SELECT para logar e salvar o usuario no app
