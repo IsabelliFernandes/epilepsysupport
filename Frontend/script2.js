@@ -1,15 +1,3 @@
-// function handleSubmit(event) {
-//     event.preventDefault();
-//     alert("Cadastro realizado com sucesso!");
-//   }
-//   if (response.ok) {
-//     // Cadastro feito com sucesso
-//     window.location.href = 'menu.html'; // redireciona para a página do menu
-//   } else {
-//     const erro = await response.json();
-//     alert('Erro ao cadastrar: ' + erro.mensagem);
-//   }
-
 async function cadastrar(event) {
       event.preventDefault();
       
@@ -29,7 +17,7 @@ async function cadastrar(event) {
 
       if (result.success) {
         alert("cadastro bem-sucedido!");
-        window.location.href = "pginicial.html";
+        window.location.href = "index.html";
       } else {
         alert("Usuário ou senha incorretos!");
       }

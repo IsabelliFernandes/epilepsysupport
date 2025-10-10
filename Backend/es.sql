@@ -27,9 +27,11 @@ CREATE TABLE conversas (
     usuario_email VARCHAR(255) NOT NULL,
     mensagem TEXT NOT NULL,
     data_envio DATETIME DEFAULT CURRENT_TIMESTAMP,
-    
-    FOREIGN KEY (usuario_email) REFERENCES usuarios_login(email) ON DELETE CASCADE 
+    FOREIGN KEY (usuario_email) REFERENCES usuarios(email) ON DELETE CASCADE 
 );
+
+select * from usuarios;
+select * from historico_crises;
 
 --unificar as tabelas de usuário
 --criar a tabela de diário que terá:
