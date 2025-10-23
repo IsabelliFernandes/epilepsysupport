@@ -13,3 +13,7 @@ function btn_chat() {
 function btn_graf() {
     window.location.href = "./grafevolut.html";
 };
+
+function btn_user() {
+  window.location.href = "./perfil.html";
+};

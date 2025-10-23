@@ -22,4 +22,14 @@ async function login(e) {
       } else {
         alert("Usuário ou senha incorretos!");
       }
+
+      function navegar() {
+        const menu = document.getElementById("menu");
+        const destino = menu.value;
+      
+        if (destino) {
+          window.location.href = destino;
+        }
+      }
+      
 };
