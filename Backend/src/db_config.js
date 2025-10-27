@@ -2,7 +2,7 @@ const mysql = require('mysql2')
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password:'root',
+    password:'Posse_sqll_1212T',
     database: 'epilepsy_support'
 })
  

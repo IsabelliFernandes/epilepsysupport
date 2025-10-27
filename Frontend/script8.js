@@ -15,6 +15,7 @@ async function login(e) {
       if (result.success) {
         sessionStorage.setItem("nome_usuario", result.usuario.nome_usuario);
         sessionStorage.setItem("id_usuario", result.usuario.id_usuario);
+        sessionStorage.setItem("profissional", result.usuario.profissional);
 
         alert("Login bem-sucedido!");
         

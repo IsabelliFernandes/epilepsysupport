@@ -23,11 +23,11 @@ CREATE TABLE historico_crises (
 
 CREATE TABLE conversas (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    room_id VARCHAR(20) NOT NULL,
-    usuario_email VARCHAR(255) NOT NULL,
+    room_id VARCHAR(50) NOT NULL,
+    id_usuario INT NOT NULL,
     mensagem TEXT NOT NULL,
     data_envio DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_email) REFERENCES usuarios(email) ON DELETE CASCADE 
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE 
 );
 
 select * from usuarios;

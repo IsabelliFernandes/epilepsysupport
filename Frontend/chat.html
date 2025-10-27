@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat - Epilepsy Support</title>
   <link rel="stylesheet" href="chat.css">
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
 </head>
+
 <body>
   <div class="container">
     <aside class="sidebar">
       <button class="menu-btn" aria-label="Abrir menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
-
       <nav class="sidebar-nav">
         <button class="nav-item" aria-label="Diário" onclick="btn_diario()">📖</button>
         <button class="nav-item active" aria-label="Chat">💬</button>
@@ -26,19 +26,34 @@
         <h1 class="brand">Epilepsy<br>Support</h1>
         <span class="brand-icon">💬</span>
       </header>
-      <div class="chat-wrapper">
-        <div class="neurologist-info">Neurologista: Bianca de Oliveira.</div>
-        <div class="chat-bubble doctor">
-          Olá <p id="p_nome_usuario"></p>, precisamos marcar a próxima consulta para falar sobre seus exames.
-        </div>
-        <div class="container-msg">
+
+      <div id="professional-selection">
+        <h2 class="chat-header-title">Iniciar Conversa</h2>
+        <p>Selecione um profissional para conversar.</p>
+        <input type="text" id="search-professional" class="chat-input" placeholder="Buscar profissional pelo nome...">
+        <div id="professional-list">
         </div>
       </div>
-      <footer class="chat-input-wrapper">
+
+      <div class="chat-wrapper" id="chat-wrapper" style="display: none;">
+        <div class="neurologist-info" id="chat-header">
+          <button id="back-to-list-btn" aria-label="Voltar">
+            &larr; 
+            <!-- O código "&larr;" acima representa a seta de voltar da conversa -->
+          </button>
+          <span id="chat-with-name"></span>
+        </div>
+
+        <div class="container-msg" id="container-msg">
+        </div>
+      </div>
+
+      <footer class="chat-input-wrapper" id="chat-input-wrapper" style="display: none;">
         <input type="text" class="chat-input" placeholder="Mensagem..." id="messageInput">
       </footer>
     </main>
   </div>
   <script src="script5.js"></script>
 </body>
+
 </html>

@@ -75,7 +75,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   
   .page-header {
@@ -89,6 +89,42 @@
   .brand-icon {
     font-size: 28px;
   }
+
+  #professional-selection {
+    padding-top: 4%;
+  }
+
+  #professional-selection .chat-header-title {
+    color: var(--title);
+  }
+
+  #professional-selection p {
+    color: var(--title);
+    margin-bottom: 1%;
+  }
+
+  #professional-selection #professional-list {
+    display: flex;
+    gap: 1vw;
+    flex-wrap: wrap;
+  }
+
+  #professional-selection #professional-list .professional-item {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    padding: 1%;
+    border-radius: 2vw;
+    border: 0;
+    cursor: pointer;
+    color: var(--text-dark);
+  }
+
+  #professional-selection #professional-list .professional-item:hover {
+    background-color: var(--sidebar-bg);
+    color: var(--gradient-top);
+    transition: .5s all ease;
+  }
   
   .chat-wrapper {
     flex: 1;
@@ -100,20 +136,46 @@
   }
   
   .neurologist-info {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
     background: #f7eae6;
     border-radius: 20px;
     padding: 0.5rem 1rem;
+    margin-bottom: 1%;
     box-shadow: 2px 2px 5px #ccc;
     max-width: 60%;
   }
+
+  .neurologist-info #back-to-list-btn {
+    background-color: var(--sidebar-bg);
+    padding: 0 1% 0 1%;
+    border-radius: 1vw;
+    border: 0;
+    font-size: 1.5rem;
+    color: var(--card-grad-top);
+    cursor: pointer;
+  }
   
+  .neurologist-info #back-to-list-btn:hover {
+    background-color: var(--card-grad-bottom);
+    color: var(--title);
+    transition: .5s all ease;
+  }
+
   .chat-bubble {
+    display: flex;
+    flex-direction: column;
     background: #f7eae6;
     border-radius: 20px;
     padding: 1rem;
     box-shadow: 2px 2px 5px #ccc;
     max-width: 70%;
     line-height: 1.5;
+  }
+
+  .chat-bubble h5 {
+    color: var(--title);
   }
   
   .chat-bubble.doctor {

@@ -17,7 +17,7 @@ function btn_chat() {
     const usuarioId = sessionStorage.getItem('id_usuario');
   
     // Seleciona os elementos da página
-    const mainContent = document.querySelector('.main');
+    const mainContent = document.querySelector('.container-relatorios');
     const backButton = mainContent.querySelector('a[href="dregistro.html"]');
   
     // Se não encontrar o ID, redireciona para o login (segurança)
