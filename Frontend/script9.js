@@ -9,6 +9,10 @@ function btn_chat() {
     // Ex: window.location.href = 'estatisticas.html';
   }
   
+  function btn_user() {
+    window.location.href = "./perfil.html";
+  };
+  
   // --- SCRIPT PRINCIPAL DA PÁGINA DE RELATÓRIOS ---
   
   // Aguarda o HTML ser completamente carregado

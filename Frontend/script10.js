@@ -2,11 +2,13 @@
 function btn_diario() {
     window.location.href = 'dregistro.html'; // Ajuste o nome do arquivo se necessário
   }
+
   function btn_chat() {
-    window.location.href = 'chat.html'; // Ajuste o nome do arquivo se necessário
-  }
+    window.location.href = "./chat.html";
+  };
+
   function btn_graf() {
-    window.location.href = 'graficos.html'; // Ajuste o nome do arquivo se necessário
+    window.location.href = 'grafevolut.html'; // Ajuste o nome do arquivo se necessário
   }
   
   document.addEventListener('DOMContentLoaded', () => {

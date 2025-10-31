@@ -11,6 +11,10 @@ function btn_graf() {
   window.location.href = "./grafevolut.html";
 };
 
+function btn_user() {
+  window.location.href = "./perfil.html";
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Epilepsy Support carregado 🎉");
 

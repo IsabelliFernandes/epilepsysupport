@@ -10,6 +10,10 @@ function btn_graf() {
   window.location.href = "./grafevolut.html";
 };
 
+function btn_user() {
+  window.location.href = "./perfil.html";
+};
+
 // ==========================================================
 // === LÓGICA DO CHAT ===
 // ==========================================================
@@ -213,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
       otherUserId = otherParty.id;
       otherUserFullName = `${otherParty.nome} ${otherParty.sobrenome} (${otherParty.profissional})`;
       roomId = getRoomId(currentUser.id, otherUserId);
+      console.log(otherParty, roomId);
     }
 
     // Atualiza o cabeçalho do chat
@@ -282,9 +287,11 @@ document.addEventListener('DOMContentLoaded', () => {
         nome: currentUser.nome // Envia o nome para o outro usuário ver
       };
 
+      console.log(messageData);
+
       // Emite o evento 'send_message' para o servidor
       socket.emit('send_message', messageData);
-
+      
       // Limpa o campo de input onde é inserida a mensagem a ser enviada
       messageInput.value = '';
     }

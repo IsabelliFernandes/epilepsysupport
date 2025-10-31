@@ -19,6 +19,9 @@ function btn_diario() {
 function btn_chat() {
   window.location.href = "./chat.html";
 };
+function btn_user() {
+    window.location.href = "./perfil.html";
+};
 
 // Gráfico
 const ctx_evolution = document.getElementById('evolutionChart').getContext('2d');
