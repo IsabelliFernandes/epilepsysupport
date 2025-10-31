@@ -109,10 +109,11 @@ app.delete('/usuarios/:id', (req, res) => {
 
 // Endpoint: Registrar sintoma (historico_crises)
 app.post('/enviarSintomas', (req, res) => {
-    const { id_usuario, sintomas } = req.body;
+    const { id_usuario, sintomasSelecionados:sintomas } = req.body;
+    const sintomasEmJSON = JSON.stringify(sintomas);
     const query = 'INSERT INTO historico_crises (id_usuario, sintomas) VALUES (?, ?)';
     
-    connection.query(query, [id_usuario, sintomas], (err, results) => {
+    connection.query(query, [id_usuario, sintomasEmJSON], (err, results) => {
         if (err) {
             return res.status(500).json({ success: false, message: 'Erro ao registrar sintoma.', err });
         }
